@@ -1,0 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, rgb(4, 0, 2) 0%, rgb(0, 46, 9) 100%);
+}
+canvas {
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+}
