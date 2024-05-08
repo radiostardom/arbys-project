@@ -16,10 +16,10 @@ var displayedMessages = [];
 
 function setup() {
   createCanvas(650, 700);
-  phone = loadImage('../img/phone.png');
-  hand = loadImage('../img/hand.png');
-  font = loadFont('../font/CuteFont-Regular.ttf');
-  bg = loadImage('../img/bgtable.jpeg');
+  phone = loadImage('/img/phone.png');
+  hand = loadImage('/img/hand.png');
+  font = loadFont('/font/CuteFont-Regular.ttf');
+  bg = loadImage('/img/bgtable.jpeg');
 }
 
 function draw() {
@@ -31,7 +31,7 @@ function draw() {
   } else {
     cursor(HAND);
   }
-  
+
   // If shaking is true, apply a random displacement to the phone
   if (shaking) {
     var shakeAmount = 10; // Adjust the intensity of the shake
