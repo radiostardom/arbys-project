@@ -61,7 +61,7 @@ function draw() {
   if (displayedMessages.length === messages.length) {
     setTimeout(function() {
       window.location.href = 'page3.html';
-    }, 2000); 
+    }, 5000); 
   }
 }
 
