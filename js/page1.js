@@ -15,7 +15,7 @@ let speed = 0.02;
 function setup() {
   createCanvas(650, 2300);
   font = loadFont('font/Codystar-Regular.ttf');
-  font2 = loadFont('/font/CuteFont-Regular.ttf');
+  font2 = loadFont('font/CuteFont-Regular.ttf');
   bg = loadImage('img/lights.png');
   ufo = loadImage('img/ufo.png');
   ufolight = loadImage('img/ufolight.png');
