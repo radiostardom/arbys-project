@@ -57,6 +57,12 @@ function draw() {
   for (var i = 0; i < displayedMessages.length; i++) {
     text(displayedMessages[i], 312.5, 40 + i * 25);
   }
+
+  if (displayedMessages.length === messages.length) {
+    setTimeout(function() {
+      window.location.href = 'page3.html';
+    }, 2000); 
+  }
 }
 
 function mouseClicked() {
