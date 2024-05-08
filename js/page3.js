@@ -10,7 +10,7 @@ let spacing = 60;
 
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(windowWidth, windowHeight);
   font = loadFont('font/CuteFont-Regular.ttf');
   
   letters = split("INVADERS\nFROM\nANOTHER\nWORLD.", "\n");
