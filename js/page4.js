@@ -15,16 +15,16 @@ var darknessLevel = 0; // initial darkness level
 
 function setup() {
   createCanvas(600, 400);
-  bg = loadImage("tvbg.png");
-  tv = loadImage("tv.png");
-  button1 = loadImage("button1.png");
-  button2 = loadImage("button2.png");
-  screen1 = loadImage("screen1.gif");
-  screen2 = loadImage("screen2.gif");
-  screen3 = loadImage("screen3.gif");
-  screen4 = loadImage("wtnv.gif");
-  screen5 = loadImage("screen4.gif");
-  font = loadFont("Anton-Regular.ttf");
+  bg = loadImage("img/tvbg.png");
+  tv = loadImage("img/tv.png");
+  button1 = loadImage("img/button1.png");
+  button2 = loadImage("img/button2.png");
+  screen1 = loadImage("img/screen1.gif");
+  screen2 = loadImage("img/screen2.gif");
+  screen3 = loadImage("img/screen3.gif");
+  screen4 = loadImage("img/wtnv.gif");
+  screen5 = loadImage("img/screen4.gif");
+  font = loadFont("font/Anton-Regular.ttf");
 }
 
 function draw() {
