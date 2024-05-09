@@ -3,16 +3,17 @@ var bg;
 var hand;
 var font;
 var phoneX = -20; // Initial x-coordinate of the phone
-var phoneY = 50;   // Initial y-coordinate of the phone
+var phoneY = 50; // Initial y-coordinate of the phone
 var shaking = false;
 var shakeTimer = 0;
 var shakeDuration = 30; // Adjust the duration of the shake
-var messages = ["...",
+var messages = [
   "WE KNOW THE DIFFERENCE.",
-  "WE'VE CAUGHT ONTO THEIR GAME.",
-  "WE UNDERSTAND THE LIGHTS-ABOVE-ARBY'S GAME."
+  "WE'VE CAUGHT ONTO THEIR \"GAME\".",
+  "WE UNDERSTAND THE \"LIGHTS-ABOVE-ARBY'S\" GAME."
 ];
 var displayedMessages = [];
+var allMessagesDisplayed = false;
 
 function setup() {
   createCanvas(650, 700);
@@ -25,8 +26,8 @@ function setup() {
 function draw() {
   background(bg);
   textFont(font);
-  
-  if(mouseY < 300){
+
+  if (mouseY < 300) {
     cursor(ARROW);
   } else {
     cursor(HAND);
@@ -43,34 +44,44 @@ function draw() {
       shakeTimer = 0;
     }
   }
-  
+
   // Display the phone image
   image(phone, phoneX, phoneY);
-  
+
   // Display the hand image
-  image(hand, mouseX-600, mouseY-100);
-  
+  image(hand, mouseX - 600, mouseY - 100);
+
   // Display the messages at the top of the screen
   textAlign(CENTER);
   fill(255);
   textSize(35);
+  fill("rgb(255,255,255)");
   for (var i = 0; i < displayedMessages.length; i++) {
-    text(displayedMessages[i], 312.5, 40 + i * 25);
+    text(displayedMessages[i], 320, 70 + i * 25);
   }
 
+  // If all messages are displayed, set flag
   if (displayedMessages.length === messages.length) {
-    setTimeout(function() {
-      window.location.href = 'page3.html';
-    }, 5000); 
+    allMessagesDisplayed = true;
   }
 }
 
 function mouseClicked() {
-  // Check if the mouse click is within the phone's area
-  if (mouseX > phoneX && mouseX < phoneX + phone.width && mouseY > phoneY && mouseY < phoneY + phone.height) {
+  if (
+    mouseX > phoneX &&
+    mouseX < phoneX + phone.width &&
+    mouseY > phoneY &&
+    mouseY < phoneY + phone.height
+  ) {
     if (displayedMessages.length < messages.length) {
       displayedMessages.push(messages[displayedMessages.length]);
     }
-    shaking = true; // Start the shaking effect when the phone is clicked
+    shaking = true;
+    // Redirect if all messages are displayed
+    if (allMessagesDisplayed) {
+      setTimeout(function () {
+        window.location.href = 'page3.html';
+      }, 200);
+    }
   }
 }

@@ -12,6 +12,8 @@ let yOffset = 0;
 let amplitude = 20;
 let speed = 0.02;
 
+let textGlow = 0; // Variable to control text glow effect
+
 function setup() {
   createCanvas(650, 2300);
   font = loadFont('font/Codystar-Regular.ttf');
@@ -26,6 +28,7 @@ function setup() {
 }
 
 function draw() {
+  
   background(bg);
   
   glow(color('#70D638B2'),100);
@@ -39,29 +42,54 @@ function draw() {
    
   
   yOffset = sin(frameCount * speed) * amplitude;
-  
+  glow(color('#FFFFFF'), mouseY*0.15); 
   fill('#FDE089');
   textFont(font);
   textSize(80);
   textAlign(CENTER);
   text('L\nI\nG\nH\nT\nS', 320, 300);
 
-  glow(color('#FDE089'), 0);
+  // Glow effect for 'seen in the sky above the Arby\'s' text
+  if (mouseY > 1100 && mouseY < 1300) {
+    textGlow = 50;
+  } else {
+    textGlow = 0; 
+  }
+
+  glow(color('#FDE089'), textGlow);
   fill('#FFFFFF');
   textFont(font2);
   textSize(30);
   textAlign(LEFT);
-  text('seen in the\nsky above\nthe Arby\'s.', 360, 1150+ (yOffset*0.5));
+  text('seen in the\nsky above\nthe Arby\'s.', 360, 1150 + (yOffset*0.5));
+
+  // Glow effect for 'Not the glowing sign of Arby\'s' text
+  if (mouseY > 1400 && mouseY < 1600) {
+    textGlow = 50;
+  } else {
+    textGlow = 0; 
+  }
+
+  glow(color('#FDE089'), textGlow);
   textAlign(RIGHT);
-  text('Not the\nglowing sign\nof Arby\'s;', 300, 1450+ (yOffset*0.5));
+  text('Not the\nglowing sign\nof Arby\'s;', 300, 1450 + (yOffset*0.5));
+
+  // Glow effect for 'something higher and beyond that' text
+  if (mouseY > 1800 && mouseY < 2000) {
+    textGlow = 50;
+  } else {
+    textGlow = 0;
+  }
+
+  glow(color('#FDE089'), textGlow);
   textAlign(LEFT);
-  text('something\nhigher and\nbeyond that.', 360, 1850+ (yOffset*0.5));
+  text('something\nhigher and\nbeyond that.', 360, 1850 + (yOffset*0.5));
   
   if(mouseY > 2000){
     glow(color('#4CAF50'), 100);
     image(haunted, 10, 2000); 
   }
-
+  
   if(mouseY < 2000){
     cursor(ARROW);
   } else {
