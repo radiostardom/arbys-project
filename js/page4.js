@@ -155,6 +155,6 @@ function mousePressed() {
     mouseY < 110 + screen5.height
   ) {
 
-    window.location.href = "page1.html"; 
+    window.location.href = "index.html"; 
   }
 }
