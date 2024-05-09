@@ -101,7 +101,7 @@ function onScreen(x, y) {
 }
 
 function mousePressed() {
-  // Check if the mouse is clicked within the bounds of the text
+
   let yOffset = (height - (letters.length - 1) * spacing) / 2;
   for (let i = 0; i < letters.length; i++) {
     let x = width / 2;

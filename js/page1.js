@@ -12,7 +12,7 @@ let yOffset = 0;
 let amplitude = 20;
 let speed = 0.02;
 
-let textGlow = 0; // Variable to control text glow effect
+let textGlow = 0; // variable to control text glow effect
 
 function setup() {
   createCanvas(650, 2300);
@@ -49,7 +49,7 @@ function draw() {
   textAlign(CENTER);
   text('L\nI\nG\nH\nT\nS', 320, 300);
 
-  // Glow effect for 'seen in the sky above the Arby\'s' text
+  // glow effect for 'seen in the sky above the Arby\'s' text
   if (mouseY > 1100 && mouseY < 1300) {
     textGlow = 50;
   } else {
@@ -63,7 +63,7 @@ function draw() {
   textAlign(LEFT);
   text('seen in the\nsky above\nthe Arby\'s.', 360, 1150 + (yOffset*0.5));
 
-  // Glow effect for 'Not the glowing sign of Arby\'s' text
+  // glow effect for 'Not the glowing sign of Arby\'s' text
   if (mouseY > 1400 && mouseY < 1600) {
     textGlow = 50;
   } else {

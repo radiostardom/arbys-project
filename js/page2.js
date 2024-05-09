@@ -2,11 +2,11 @@ var phone;
 var bg;
 var hand;
 var font;
-var phoneX = -20; // Initial x-coordinate of the phone
-var phoneY = 50; // Initial y-coordinate of the phone
+var phoneX = -20; 
+var phoneY = 50; 
 var shaking = false;
 var shakeTimer = 0;
-var shakeDuration = 30; // Adjust the duration of the shake
+var shakeDuration = 30; 
 var messages = [
   "WE KNOW THE DIFFERENCE.",
   "WE'VE CAUGHT ONTO THEIR \"GAME\".",
@@ -33,9 +33,9 @@ function draw() {
     cursor(HAND);
   }
 
-  // If shaking is true, apply a random displacement to the phone
+
   if (shaking) {
-    var shakeAmount = 10; // Adjust the intensity of the shake
+    var shakeAmount = 10; // adjust the intensity of the shake
     phoneX = -20 + random(-shakeAmount, shakeAmount);
     phoneY = 50 + random(-shakeAmount, shakeAmount);
     shakeTimer++;
@@ -45,13 +45,13 @@ function draw() {
     }
   }
 
-  // Display the phone image
+  // display phone 
   image(phone, phoneX, phoneY);
 
-  // Display the hand image
+  // display hand 
   image(hand, mouseX - 600, mouseY - 100);
 
-  // Display the messages at the top of the screen
+  // display messages 
   textAlign(CENTER);
   fill(255);
   textSize(35);
@@ -60,7 +60,6 @@ function draw() {
     text(displayedMessages[i], 320, 70 + i * 25);
   }
 
-  // If all messages are displayed, set flag
   if (displayedMessages.length === messages.length) {
     allMessagesDisplayed = true;
   }
@@ -77,7 +76,7 @@ function mouseClicked() {
       displayedMessages.push(messages[displayedMessages.length]);
     }
     shaking = true;
-    // Redirect if all messages are displayed
+    // redirect if all messages are displayed
     if (allMessagesDisplayed) {
       setTimeout(function () {
         window.location.href = 'page3.html';

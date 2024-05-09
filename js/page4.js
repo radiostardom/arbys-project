@@ -120,11 +120,9 @@ function mousePressed() {
     127 + button1.height / 2
   );
   if (d1 < button1.width / 2) {
-    button1Rotation += 45; // rotate 90 degrees
-    button1Rotation %= 360; // keep the rotation within 360 degrees
-    // change the screen when button1 is clicked
-    currentScreen = (currentScreen % 5) + 1; // loop through screens 1 to 4
-    // increase darkness level
+    button1Rotation += 45; 
+    button1Rotation %= 360;
+    currentScreen = (currentScreen % 5) + 1;
     darknessLevel += 20;
     darknessLevel = constrain(darknessLevel, 0, 100); // keep darkness level between 0 and 100
   }
@@ -137,10 +135,8 @@ function mousePressed() {
     184 + button2.height / 2
   );
   if (d2 < button2.width / 2) {
-    button2Rotation += 45; // rotate 90 degrees
-    button2Rotation %= 360; // keep the rotation within 360 degrees
-    // change the screen when button2 is clicked
-    currentScreen = (currentScreen % 5) + 1; // loop through screens 1 to 4
+    button2Rotation += 45;
+    currentScreen = (currentScreen % 5) + 1; 
     // increase darkness level
     darknessLevel += 10;
     darknessLevel = constrain(darknessLevel, 0, 100); // keep darkness level between 0 and 100
